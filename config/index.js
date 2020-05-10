@@ -3,7 +3,7 @@ import { version } from "../package.json";
 // ?? 🤔 ?? --> https://en.freesewing.dev/packages/core/config
 
 export default {
-  name: "panel-skirt",
+  name: "panelled-skirt",
   version,
   design: "Roopin619",
   code: "Roopin619",
@@ -21,15 +21,17 @@ export default {
     "sewing",
     "sewing pattern"
   ],
-  optionGroups: {
-    fit: ["size"]
-  },
-  measurements: [],
+  optionGroups: {},
+  measurements: ["naturalWaist","hipsCircumference"],
   dependencies: {},
   inject: {},
   hide: [],
-  parts: ["box"],
+  parts: ["waistband", "panel"],
   options: {
-    size: { pct: 50, min: 10, max: 100 }
+    panelLength: { mm: 533.4, min: 406.4, max: 660.4 },
+    waistBandWidth: { mm: 76.2, min: 25.4, max: 127 },
+    numOfPanels: { count: 8, min: 4, max: 14 },
+    naturalWaistToHip: { mm: 203.2, min: 127, max: 279.4 },
+    hemExcess: { mm: 0, min: -76.2, max: 203.2 }
   }
 };
